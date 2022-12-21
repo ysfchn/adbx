@@ -1,6 +1,36 @@
+[project]
+name = "adbx"
+authors = [{ name = "ysfchn" }]
+description = "ADB binaries served as Python package."
+license.file = "LICENSE"
+readme = "README.md"
+urls = { "Source Code" = "https://github.com/ysfchn/adbx" }
+classifiers = [
+    "Programming Language :: Python :: 3.7",
+    "License :: CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: Microsoft :: Windows"
+]
+requires-python = ">=3.7"
+dynamic = ["version"]
+
+[project.scripts]
+adb = "adbx.__main__:adb"
+fastboot = "adbx.__main__:fastboot"
+
+[tool.setuptools]
+packages = ["adbx"]
+platforms = ["posix", "windows"]
+
+[tool.setuptools.package-data]
+"adbx" = ["bin/**"]
+
+[tool.setuptools.dynamic]
+version = { attr = "adbx.__version__" }
+
 [build-system]
 requires = [
-    "setuptools>=42",
+    "setuptools>=61",
     "wheel"
 ]
 build-backend = "setuptools.build_meta"

@@ -1,2 +1,0 @@
-#!/bin/sh
-$0\..\Lib\site-packages\adbx\adb\adb $@
